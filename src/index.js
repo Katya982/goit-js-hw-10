@@ -13,7 +13,8 @@ const refs = {
 const DEBOUNCE_DELAY = 300;
 refs.input.addEventListener( 'input', debounce( onInputCountry, DEBOUNCE_DELAY));
 
-function  onInputCountry (event) {
+function onInputCountry(event) {
+  event.preventDefault();
   const trimedValue = refs.input.value.trim();
   if (trimedValue === '') {
     cleanHtml();
